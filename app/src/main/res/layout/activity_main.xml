@@ -6,7 +6,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#f1f1f1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,6 +28,7 @@
     </RelativeLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/home_rv"
+        android:background="#f1f1f1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
