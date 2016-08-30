@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_back"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/elec_wire"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="寝室序号："
+        android:layout_marginLeft="34dp"/>
+    <EditText
+        android:id="@+id/query_elect_dorm"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        android:background="@drawable/shape_layout2"
+        />
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:textSize="16sp"
+        android:text="联系方式："/>
+    <EditText
+        android:id="@+id/query_elect_tel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        android:background="@drawable/shape_layout2"/>
+    <Button
+        android:id="@+id/query_elect_query"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_layout"
+        android:text="查询"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

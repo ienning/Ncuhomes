@@ -1,7 +1,6 @@
 package com.example.ienning.ncuhome.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.ienning.ncuhome.R;
-import com.example.ienning.ncuhome.activity.FourAndSix;
 import com.example.ienning.ncuhome.db.ItemArticle;
 
 import java.util.List;
@@ -19,36 +17,35 @@ import java.util.List;
 /**
  * Created by ienning on 16-7-16.
  */
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> implements View.OnClickListener{
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
     private List<ItemArticle> dataList;
-    private static int positons;
     private Context context;
-    private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener = null;
+    private OnItemClickListener onRecyclerViewItemClickListener = null;
     public ItemAdapter(Context context, List<ItemArticle> dataList) {
         this.context = context;
         this.dataList = dataList;
     }
+
+    //这个是加载ViewHolder，设置视图
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         try {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_item, viewGroup, false);
-            ItemViewHolder vh = new ItemViewHolder(view);
-            view.setOnClickListener(this);
-            return vh;
+            return new ItemViewHolder(view);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
+
+    //可以在这里面对item进行业务逻辑操作，绑定数据
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         try {
             if (holder instanceof ItemViewHolder) {
-                ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
                 ItemArticle item = dataList.get(position);
-                positons = position;
-                itemViewHolder.imageView.setImageResource(item.getSource());
-                itemViewHolder.textView.setText(item.getName());
+                holder.imageView.setImageResource(item.getSource());
+                holder.textView.setText(item.getName());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,93 +56,32 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         return  dataList.size();
     }
 
-    /*
-    @Override
-    public int getItemViewTypeItem(int position) {
-        return ITEM_VIEW_TYPE_ITEM;
-    }
-     */
-
-    @Override
-    public void onClick(View v) {
-        LinearLayout linearLayout = (LinearLayout) v.findViewById(R.id.main_page);
-        linearLayout.setBackgroundColor(context.getResources().getColor(R.color.main_grays));
-        Intent intent = new Intent(context, FourAndSix.class);
-        context.startActivity(intent);
-        v.pos
-        /*
-        switch (getPosition()) {
-
-            case 0:
-                Toast.makeText(context, "This is zero", Toast.LENGTH_SHORT).show();
-                break;
-
-            case 1:
-                Toast.makeText(context, "This is onre", Toast.LENGTH_SHORT).show();
-                break;
-            case 2:
-                Toast.makeText(context, "This is two", Toast.LENGTH_SHORT).show();
-                break;
-            case 3:
-                Toast.makeText(context, "This is three", Toast.LENGTH_SHORT).show();
-                break;
-            case 4:
-                Toast.makeText(context, "This is four", Toast.LENGTH_SHORT).show();
-                break;
-            case 5:
-                Toast.makeText(context, "This is five", Toast.LENGTH_SHORT).show();
-                break;
-            case 6:
-                Toast.makeText(context, "This is six", Toast.LENGTH_SHORT).show();
-                break;
-            case 7:
-                Toast.makeText(context, "This is seven", Toast.LENGTH_SHORT).show();
-                break;
-            case 8:
-                Toast.makeText(context, "This is eight", Toast.LENGTH_SHORT).show();
-                break;
-        }
-        */
-
-    }
-    class ItemViewHolder extends RecyclerView.ViewHolder //implements View.OnClickListener, View.OnLongClickListener
+    //在这里设置监听回调
+    class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener // View.OnLongClickListener
     {
         private ImageView imageView;
         private TextView textView;
+        private LinearLayout linearLayout;
         public ItemViewHolder(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.item_iv);
             textView = (TextView) itemView.findViewById(R.id.item_tv);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.main_page);
+            linearLayout.setOnClickListener(this);
         }
-
-        public ImageView getImageView() {
-            return imageView;
-        }
-
-        public TextView getTextView() {
-            return textView;
-        }
-
-        public void setImageView(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        public void setTextView(TextView textView) {
-            this.textView = textView;
+        @Override
+        public void onClick(View v) {
+            if (onRecyclerViewItemClickListener != null) {
+                onRecyclerViewItemClickListener.onClick(itemView, getAdapterPosition());
+            }
         }
     }
-    public static interface OnRecyclerViewItemClickListener {
-        void onItemClick(View view, List<ItemArticle> data);
+    //设定Item监听接口
+    public static interface OnItemClickListener {
+        void onClick(View view, int position);
     }
-    public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
+    //暴露一个监听方法给外界调用
+    public void setOnItemClickListener(OnItemClickListener listener) {
         this.onRecyclerViewItemClickListener = listener;
     }
-    /*
-    public void setposition(int positon) {
-        this.positons = positon;
-    }
-    public int getPositon() {
-        return positons;
-    }
-    */
 }

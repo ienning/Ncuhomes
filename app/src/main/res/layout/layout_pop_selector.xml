@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55555555">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/albums"
+        android:layout_above="@+id/cancel"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="33dp"
+        android:background="@drawable/shape_layout"
+        android:text="从相册中选择"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/cancel"
+        android:layout_marginLeft="33dp"
+        android:layout_margin="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_layout"
+        >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        />
+    </LinearLayout>
+</RelativeLayout>

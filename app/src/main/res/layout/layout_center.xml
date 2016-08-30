@@ -4,17 +4,23 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:background="#F9F9F9"
+        android:layout_height="62dp"
+        android:background="#F1F1F1"
         >
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:id="@+id/back_main">
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="16dp"
+            android:layout_height="20dp"
             android:src="@drawable/back"
-            android:background="#F9F9F9"
+            android:background="#F1F1F1"
             android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"/>
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,9 +29,11 @@
             android:textSize="16sp" />
     </RelativeLayout>
     <ImageView
+        android:id="@+id/head"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginTop="21dp"
+        android:src="@drawable/head"
         android:layout_gravity="center_horizontal"/>
     <TextView
         android:layout_marginTop="18dp"
@@ -35,7 +43,7 @@
         android:text="大白菜奶糖"
         android:textSize="18sp"/>
     <TextView
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -43,7 +51,7 @@
         android:textSize="11sp"
         android:textColor="#3388b2"/>
     <TextView
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -52,37 +60,215 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <LinearLayout
+        android:background="@drawable/border"
+        android:layout_marginTop="16dp"
+        android:id="@+id/library"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c1d6e4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/student_hat"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp"
+            android:text="掌上图书馆" />
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/phonenumber"
+        android:background="@drawable/border"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c1d6e4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/smartphone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp"
+            android:text="手机号码" /></LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/change_password"
+        android:background="@drawable/border"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c1d6e4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/student_hat"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp"
+            android:text="修改密码" /></LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/feedback"
+        android:background="@drawable/border"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c1d6e4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/back_to"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp"
+            android:text="反馈" /></LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/about_home"
+        android:background="@drawable/border"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c1d6e4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/heart"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp"
+            android:text="关于家园" />
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/logout"
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c1d6e4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#0173ad"
+            android:layout_marginLeft="12dp"
+            android:gravity="center"
+            android:text="退出登录" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:background="#F9F9F9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c1d6e4"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"/>
+    </LinearLayout>
+    </LinearLayout>
+    <!--
+    <ListView
+        android:divider="@drawable/layout_driver"
+        android:dividerHeight="2dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:id="@+id/list_item"/>
+        -->
+
 </LinearLayout>

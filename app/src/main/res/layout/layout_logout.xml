@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55555555">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:layout_above="@+id/cancel2"
+        android:text="退出"
+        android:textColor="#0173ad"
+        android:id="@+id/logout_confirm"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:id="@+id/cancel2"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="#0173ad"
+        android:text="取消" />
+    </LinearLayout>
+
+</RelativeLayout>

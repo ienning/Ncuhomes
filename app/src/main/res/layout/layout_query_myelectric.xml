@@ -111,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:text="44"/>
+                    />
                 <TextView
                     android:layout_marginLeft="26dp"
                     android:layout_width="wrap_content"
@@ -151,7 +151,7 @@
                     android:layout_marginLeft="55dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="本月用电"
+                    android:text="现金余额"
                     />
                 <TextView
                     android:layout_marginLeft="26dp"
@@ -159,7 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:text="44"/>
+                    />
                 <TextView
                     android:layout_marginLeft="26dp"
                     android:layout_width="wrap_content"
@@ -198,7 +198,7 @@
                     android:layout_marginLeft="65dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="本月用电"
+                    android:text="剩余电量"
                     />
                 <TextView
                     android:layout_marginLeft="26dp"
@@ -206,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:text="44"/>
+                    />
                 <TextView
                     android:layout_marginLeft="26dp"
                     android:layout_width="wrap_content"
@@ -244,7 +244,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="本月用电"
+                    android:text="预计使用"
                     />
                 <TextView
                     android:layout_marginLeft="26dp"
@@ -252,7 +252,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:text="44"/>
+                    />
                 <TextView
                     android:layout_marginLeft="26dp"
                     android:layout_width="wrap_content"

@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="main_grays">#EAEAEA</color>
-    <color name="person_gray">#D0E4EB</color>
+    <color name="person_gray">#ebfdf0</color>
+    <color name="grade_list">#EBFDF0</color>
 </resources>

@@ -19,6 +19,7 @@
             />
 
         <ImageButton
+            android:id="@+id/person_center"
             android:layout_width="16dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"

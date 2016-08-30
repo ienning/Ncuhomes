@@ -17,7 +17,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -38,7 +37,7 @@ import java.io.FileNotFoundException;
 public class PersonCenter extends Activity implements View.OnClickListener{
 
     private ImageView head;
-    private ImageButton back;
+    private LinearLayout back;
     private LinearLayout library;
     private LinearLayout phoneNumber;
     private LinearLayout changePassword;
@@ -72,7 +71,7 @@ public class PersonCenter extends Activity implements View.OnClickListener{
         photoSavePath = Environment.getExternalStorageDirectory() + "/ClipHeadPhoto/cache/";
         photoSaveName = System.currentTimeMillis() + ".png";
         head = (ImageView) findViewById(R.id.head);
-        back = (ImageButton) findViewById(R.id.back_main);
+        back = (LinearLayout) findViewById(R.id.back_main);
         library = (LinearLayout) findViewById(R.id.library);
         phoneNumber = (LinearLayout) findViewById(R.id.phonenumber);
         changePassword = (LinearLayout) findViewById(R.id.change_password);

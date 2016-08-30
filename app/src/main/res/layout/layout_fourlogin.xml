@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_back" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="36dp"
+        android:textSize="24dp"
+        android:textColor="#3f54d4"
+        android:text="CET 4/6"/>
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/border2"/>
+    <TextView
+        android:layout_marginTop="23dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:textSize="16sp"
+        android:text="准考证号:"/>
+    <EditText
+        android:id="@+id/four_get_username"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/shape_layout2"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_height="44dp" />
+    <TextView
+        android:layout_marginTop="23dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:textSize="16sp"
+        android:text="姓名:"
+        />
+    <EditText
+        android:id="@+id/four_get_password"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/shape_layout2"/>
+    <LinearLayout
+        android:layout_marginTop="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5a6cd8"
+            android:text="让小家园帮您记住准考证号，再也不怕准考证丢失啦！"/>
+        <Button
+            android:id="@+id/four_save"
+            android:layout_marginTop="16dp"
+            android:layout_width="129dp"
+            android:layout_height="45dp"
+            android:textColor="#FFFFFF"
+            android:text="保存"
+            android:background="@drawable/shape_layout"
+            />
+    </LinearLayout>
+</LinearLayout>
