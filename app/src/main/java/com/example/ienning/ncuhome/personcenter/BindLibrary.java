@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +13,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ienning.ncuhome.R;
+import com.example.ienning.ncuhome.activity.LibraryRentBook;
 import com.example.ienning.ncuhome.net.HttpUtil;
+import com.example.ienning.ncuhome.net.JsonAnalysis;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * Created by ienning on 16-8-1.
@@ -27,6 +39,8 @@ public class BindLibrary extends Activity{
     SharedPreferences.Editor editor;
     private LinearLayout back;
     private TextView centerTitle;
+    private String json;
+    private String responseStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +60,7 @@ public class BindLibrary extends Activity{
                 libusername = libraryUsername.getText().toString();
                 libpassword = libraryPassword.getText().toString();
                 if (checkLibrary(libusername, libpassword)) {
-
+                    login(libusername, libpassword);
                 }
             }
         });
@@ -79,7 +93,31 @@ public class BindLibrary extends Activity{
         }
     }
     public void login(String username, String password) {
-        HttpUtil httpUtil = new HttpUtil();
-        
+        final JsonAnalysis jsonAnalysis = new JsonAnalysis();
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("username", username);
+            jsonObject.put("password", password);
+            json = jsonObject.toString();
+            HttpUtil httpUtil = new HttpUtil();
+            httpUtil.postl("http://www.ncuos.com/api/library/libinfo", json, sharedPreferences.getString("token", null), new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+
+                }
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    responseStr = response.body().string();
+                    Log.i("Ienning", "onResponse: is the result" + responseStr);
+                    jsonAnalysis.parseJSONWithLib(responseStr);
+                    Intent intent = new Intent(BindLibrary.this, LibraryRentBook.class);
+                    startActivity(intent);
+                }
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
     }
 }
