@@ -13,7 +13,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             + "lessonName text, "
             + "score real, "
             + "credit real, "
-            + "term text)";
+            + "term text," +
+            " numbers real)";
+    public static final String CREATE_RENTBOOK = "create table rentBook ( id integer primary key autoincrement, "
+            + "author text, "
+            + "barCode text, "
+            + "borrowDate text, "
+            + "checks text, "
+            + "location text, "
+            + "returnDate text, "
+            + "title text)";
     private Context mContext;
     public MyDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -22,10 +31,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_GRADE);
-        Toast.makeText(mContext , "test is ok", Toast.LENGTH_SHORT).show();
+        db.execSQL(CREATE_RENTBOOK);
+        Toast.makeText(mContext, "test is ok", Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("drop table if exists Grade");
+        db.execSQL("drop table if exists rentBook");
+        onCreate(db);
     }
 }
